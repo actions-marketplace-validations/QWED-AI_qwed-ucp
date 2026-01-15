@@ -68,15 +68,9 @@ class StateGuard:
                 )
         
         # Rule 2: ready_for_complete -> payment method should be referenced
-        if status == "ready_for_complete":
-            # Check for payment info (could be in various places)
-            has_payment = (
-                checkout.get("payment_method") is not None or
-                checkout.get("payment") is not None or
-                checkout.get("payment_token") is not None
-            )
-            # Note: This is a soft check - some UCP flows handle payment separately
-            # We just log it in details
+        # Note: This is a soft check - some UCP flows handle payment separately
+        # Payment info could be in: payment_method, payment, or payment_token
+        # Currently not enforced as a hard requirement
         
         # Rule 3: non-incomplete status -> line_items should exist
         if status not in ("", "incomplete"):

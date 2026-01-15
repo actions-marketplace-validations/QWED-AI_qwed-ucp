@@ -151,9 +151,9 @@ class SchemaGuard:
         
         # Check required fields
         required = self.schema.get("required", [])
-        for field in required:
-            if field not in checkout:
-                errors.append(f"Missing required field: '{field}'")
+        for field_name in required:
+            if field_name not in checkout:
+                errors.append(f"Missing required field: '{field_name}'")
         
         # Check currency format if present
         currency = checkout.get("currency")
