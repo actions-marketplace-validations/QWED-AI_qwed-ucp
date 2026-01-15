@@ -23,7 +23,6 @@ classifiers = [
 ]
 requires-python = ">=3.10"
 dependencies = [
-    "qwed-verification>=2.0.0",
     "jsonschema>=4.0.0",
 ]
 
