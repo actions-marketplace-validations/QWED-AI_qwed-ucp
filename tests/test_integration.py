@@ -12,7 +12,6 @@ from decimal import Decimal
 from qwed_ucp.core import UCPVerifier
 from qwed_ucp.guards.money import MoneyGuard
 from qwed_ucp.guards.state import StateGuard
-from qwed_ucp.guards.schema import SchemaGuard
 
 
 # =============================================================================
