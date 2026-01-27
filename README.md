@@ -1,6 +1,21 @@
-# QWED-UCP 🛒
+# QWED-UCP: Universal Commerce Protocol Verification
 
-**Deterministic Verification for Universal Commerce Protocol (UCP) Transactions**
+> **🛒 Safe Agentic Commerce**
+> Verifies transactions for the **Universal Commerce Protocol**.
+
+## Features
+*   **MoneyGuard:** Prevents AI from miscalculating your cart total (SymPy Precision Math).
+*   **StateGuard:** Prevents illegal order modifications (Z3 Logic).
+*   **Compliance:** Ensures agents adhere to UCP v1.0 strict standards.
+
+## Usage
+```python
+from qwed_ucp.verifier import UCPVerifier
+ucp = UCPVerifier()
+report = ucp.verify_checkout(cart_json)
+```
+
+## Protocol Spec
 
 [![PyPI](https://img.shields.io/pypi/v/qwed-ucp?color=blue&label=PyPI)](https://pypi.org/project/qwed-ucp/)
 [![CI](https://github.com/QWED-AI/qwed-ucp/actions/workflows/ci.yml/badge.svg)](https://github.com/QWED-AI/qwed-ucp/actions)
