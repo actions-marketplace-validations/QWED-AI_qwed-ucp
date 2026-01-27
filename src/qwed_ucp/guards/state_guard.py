@@ -26,18 +26,10 @@ class StateGuard:
         # 2. REFUND action requires PAID, SHIPPED, or DELIVERED state
         # 3. CANCEL action is allowed from PENDING or PAID (before shipping) - *Adding heuristic constraint*
         
+        
         # We formulate the "Validity Condition":
         # The transition is VALID IF...
         
-        is_valid_ship = (s_act == "ship") == (s_curr == "paid")
-        
-        # For Refund: Must have money to refund
-        money_states = ["paid", "shipped", "delivered"]
-        is_valid_refund = (s_act == "refund") == (s_curr in money_states)
-        
-        # For Pay: Must be Pending
-        is_valid_pay = (s_act == "pay") == (s_curr == "pending")
-
         # Combining logic: 
         # We want to check if the specific combination provided is VALID.
         # But Z3 is best for solving "Is there a case where...". 

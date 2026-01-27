@@ -1,4 +1,4 @@
-from sympy import sympify, Eq
+from sympy import sympify
 from decimal import Decimal
 from typing import List, Dict, Any
 
