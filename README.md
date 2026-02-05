@@ -351,4 +351,6 @@ Apache 2.0 - See [LICENSE](LICENSE)
 
 *"AI agents shouldn't guess at math. QWED makes commerce verifiable."*
 
+<a href="https://snyk.io/test/github/QWED-AI/qwed-ucp"><img src="https://snyk.io/test/github/QWED-AI/qwed-ucp/badge.svg" alt="Known Vulnerabilities" /></a>
+
 </div>
