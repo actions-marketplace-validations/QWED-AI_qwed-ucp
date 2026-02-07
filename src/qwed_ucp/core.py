@@ -25,6 +25,8 @@ class UCPVerificationResult:
     verified: bool
     guards: list[GuardResult] = field(default_factory=list)
     error: Optional[str] = None
+    engine: str = "QWED-Deterministic-v1"
+    verification_mode: str = "deterministic"
     
     def __str__(self) -> str:
         if self.verified:
