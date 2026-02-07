@@ -1,14 +1,23 @@
 /**
  * Example: Express.js UCP Server with QWED-UCP Middleware
  * 
- * Run: npm install express && node express_server.js
+ * Run: npm install express express-rate-limit && node express_server.js
  */
 
 const express = require('express');
+const rateLimit = require('express-rate-limit');
 const { createQWEDUCPMiddleware } = require('../middleware/express/qwed-ucp-middleware');
 
 const app = express();
 app.use(express.json());
+
+// Rate limiting - max 100 requests per 15 minutes
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per windowMs
+    message: { error: 'Too many requests, please try again later.' }
+});
+app.use(limiter);
 
 // Add QWED-UCP middleware
 const qwedMiddleware = createQWEDUCPMiddleware({
