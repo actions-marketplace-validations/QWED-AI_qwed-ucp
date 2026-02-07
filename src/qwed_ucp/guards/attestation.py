@@ -141,9 +141,15 @@ class AttestationGuard:
         Returns:
             Receipt dictionary
         """
-        checkout_hash = hashlib.sha256(
-            json.dumps(checkout, sort_keys=True).encode('utf-8')
-        ).hexdigest()[:16]  # Short hash for receipt
+        try:
+            checkout_hash = hashlib.sha256(
+                json.dumps(checkout, sort_keys=True).encode('utf-8')
+            ).hexdigest()[:16]  # Short hash for receipt
+        except (TypeError, ValueError):
+            # Fallback for non-JSON-serializable objects
+            checkout_hash = hashlib.sha256(
+                str(checkout).encode('utf-8')
+            ).hexdigest()[:16]
         
         return {
             "receipt_id": f"QWED-{checkout_hash.upper()}",
