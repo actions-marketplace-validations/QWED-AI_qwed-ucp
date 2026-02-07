@@ -6,6 +6,10 @@ from .schema import SchemaGuard
 from .line_items import LineItemsGuard
 from .discount import DiscountGuard
 from .currency import CurrencyGuard
+from .refund import RefundGuard
+from .tip import TipGuard
+from .fee import FeeGuard
+from .attestation import AttestationGuard
 
 __all__ = [
     "MoneyGuard",
@@ -14,4 +18,9 @@ __all__ = [
     "LineItemsGuard",
     "DiscountGuard",
     "CurrencyGuard",
+    "RefundGuard",
+    "TipGuard",
+    "FeeGuard",
+    "AttestationGuard",
 ]
+

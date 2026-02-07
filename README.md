@@ -100,6 +100,10 @@ AI agents (like Gemini, ChatGPT) are now handling e-commerce transactions:
 | **Discount Guard** | Decimal | Percentage and fixed discount calculations |
 | **Currency Guard** | Decimal | Currency precision, $0.01 rounding |
 | **Line Item Guard** | SymPy | Item quantity × price = line total |
+| **Refund Guard** | Decimal | Full/partial refund amounts, tax reversals |
+| **Tip Guard** | Decimal | Pre/post-tax tip calculations, bounds checking |
+| **Fee Guard** | Decimal | Service fees, delivery fees, platform fees |
+| **Attestation Guard** | JWT (HS256) | Cryptographic proof of verification |
 
 ---
 
